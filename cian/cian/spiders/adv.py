@@ -15,10 +15,10 @@ class AdvSpider(scrapy.Spider):
 	for elem in response.selector.css('.serp-list .serp-item'):
 		item = CianItem()
 		item['rent'] = elem.css('.serp-item__price-col .serp-item__solid::text').extract_first().encode('utf-8')
-		item['fee'] = elem.css('.serp-item__price-col .serp-item__prop').extract()
-		item['underground'] = elem.css('.serp-item__metro a').extract()
-		item['street'] = elem.css('.serp-item__address-precise a').extract()
-		item['link'] = elem.css('.serp-item__card-link::attr(href)').extract()
-		item['descr'] = elem.css('.serp-item__description__text').extract()
+		item['fee'] = elem.css('.serp-item__price-col .serp-item__prop').extract_first()
+		item['underground'] = elem.css('.serp-item__metro a').extract_first()
+		item['street'] = elem.css('.serp-item__address-precise a').extract_first()
+		item['link'] = elem.css('.serp-item__card-link::attr(href)').extract_first()
+		item['descr'] = elem.css('.serp-item__description__text').extract_first()
 		yield item
 
