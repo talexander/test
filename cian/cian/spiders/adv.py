@@ -6,6 +6,7 @@ from cian.items import CianItem
 class AdvSpider(scrapy.Spider):
     name = "adv"
     allowed_domains = ["cian.ru"]
+
     start_urls = (
     	'http://www.cian.ru/cat.php?currency=2&deal_type=rent&engine_version=2&foot_min=25&maxprice=35000&metro%5B0%5D=9&metro%5B1%5D=36&metro%5B2%5D=116&minfloor=2&minprice=27000&offer_type=flat&only_foot=2&room1=1&type=-2&wp=1',
     )
